@@ -17,7 +17,6 @@ public class Vetor {
 		}
 	}
 
-
 	public void busca(String nome) {
 		Aluno[] aux = getLista();
 		int teste = 0;
@@ -28,6 +27,17 @@ public class Vetor {
 			}
 		}
 		if (teste == 0) {
+			System.err.println("[ERRO] Aluno não encontrado.");
+		}
+	}
+
+	public void buscaInt(int numero) {
+		Aluno[] aux = getLista();
+		if (numero > 9 || numero < 0) {
+			System.err.println("[ERRO] Entrada invalida.");
+		} else if (aux[numero] != null) {
+			aux[numero].printAluno();
+		} else {
 			System.err.println("[ERRO] Aluno não encontrado.");
 		}
 	}
@@ -52,20 +62,31 @@ public class Vetor {
 	public void removeAluno(int numero) {
 		Aluno[] aux = getLista();
 		int i;
-		for (i = numero; i < aux.length - 1; i++) {
-			if (aux[i] != null) {
-				aux[i] = aux[i + 1];
+		if (!listaVazia() && aux[numero] != null) {
+			for (i = numero; i < aux.length - 1; i++) {
+				if (aux[i] != null) {
+					aux[i] = aux[i + 1];
+				}
+//				if (aux[i] != null && aux[i + 1] == null) {
+//					aux[i] = null;
+//					this.cont--;
+//				}
 			}
-			if (aux[i] != null && aux[i + 1] == null) {
-				aux[i] = null;
-				this.cont--;
-			}
+			aux[cont] = null;
+		} else if (listaVazia()) {
+			System.err.println("Lista vazia.");
+		} else {
+			System.err.println("Aluno não encontrado.");
 		}
 
 	}
 
 	public Aluno[] getLista() {
 		return alunos;
+	}
+
+	public void setCont(int valor) {
+		this.cont = valor;
 	}
 
 	public void printLista() {
@@ -82,6 +103,14 @@ public class Vetor {
 				}
 			}
 		}
+	}
+
+	public boolean listaVazia() {
+		Aluno[] aux = getLista();
+		if (aux[0] == null) {
+			return true;
+		}
+		return false;
 	}
 
 	public int numeroDeAlunos() {

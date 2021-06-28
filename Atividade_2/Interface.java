@@ -13,7 +13,7 @@ public class Interface {
 		System.out.println("Lista para teste ------------------- (2)"); // ok
 		System.out.println("Adicionar        ------------------- (3)"); // com bug
 		System.out.println("Remover          ------------------  (4)"); // com bug
-		System.out.println("Buscar	         ------------------- (5)");
+		System.out.println("Buscar	         ------------------- (5)"); // ok
 		System.out.println("SAIR             ------------------- (0)"); // ok
 		System.out.println("========================================");
 
@@ -40,6 +40,7 @@ public class Interface {
 					addAluno(listaDeAlunos, numAluno);
 					numAluno++;
 					numeroDeAlunos = listaDeAlunos.numeroDeAlunos();
+					//listaDeAlunos.setCont(numeroDeAlunos);
 				}
 				break;
 			}
@@ -61,9 +62,10 @@ public class Interface {
 				break;
 			}
 			case(5): {
-				System.out.print("Nome: ");
-				this.nome = teclado.next();
-				listaDeAlunos.busca(nome);
+				System.out.print("Numero: ");
+				//this.nome = teclado.next();
+				int numero = teclado.nextInt();
+				listaDeAlunos.buscaInt(numero);
 			}
 
 			}
