@@ -25,12 +25,12 @@ public class Aluno {
 		this.nota = nota;
 	}
 
-	Aluno(String nome, double nota) {
+	public Aluno(String nome, double nota) {
 		setNome(nome);
 		setNota(nota);
 	}
 
-	Aluno() {
+	public Aluno() {
 		setNome("-Aluno novo-");
 		setNota(0.0);
 	}

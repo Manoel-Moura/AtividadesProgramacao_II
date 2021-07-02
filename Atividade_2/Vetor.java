@@ -4,9 +4,12 @@ public class Vetor {
 	Aluno[] alunos;
 	int cont = 0;
 
-	Vetor() {
+	 Vetor() {
 		alunos = new Aluno[10];
 	}
+	 
+
+
 
 	public void adicionaAluno(Aluno novoAluno) {
 		if (cont < this.alunos.length) {
