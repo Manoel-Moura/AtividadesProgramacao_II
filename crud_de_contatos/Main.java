@@ -5,7 +5,6 @@ package crud_de_contatos;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Main {
 
 	static Scanner sc = new Scanner(System.in);
@@ -23,15 +22,6 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		boolean quiserContinuar = true;
-//		Telefone novoTelefone1 = new Telefone((byte) 86, "98147-4561");
-//		Telefone novoTelefone2 = new Telefone((byte) 89, "95437-5413");
-//		Telefone novoTelefone3 = new Telefone((byte) 81, "98450-2761");
-//		Telefone novoTelefone4 = new Telefone((byte) 11, "98234-4823");
-//		Pessoa eu = new Pessoa("Bruno", "123.321.456-00", novoTelefone1);
-//		alunos.add(eu);
-//		eu.addNumero(novoTelefone2);
-//		eu.addNumero(novoTelefone3);
-//		eu.addNumero(novoTelefone4);
 		while (quiserContinuar) {
 			imprimirMenu();
 			int opcao = coletarOpcao();
@@ -107,6 +97,7 @@ public class Main {
 		case (1): {
 			System.out.print("Novo nome: ");
 			String nome = sc.next();
+			nome += sc.nextLine();
 			alunos.get(indice).setNome(nome);
 			;
 			break;
@@ -149,12 +140,14 @@ public class Main {
 		if (aux == 1) {
 			System.out.print("Nome: ");
 			String nome = sc.next();
+			nome += sc.nextLine();
 			System.out.print("CPF: ");
 			String CPF = sc.next();
 			alunos.add(new Pessoa(nome, CPF));
 		} else if (aux == 2) {
 			System.out.print("Nome: ");
 			String nome = sc.next();
+			nome += sc.nextLine();
 			System.out.print("CPF: ");
 			String CPF = sc.next();
 			System.out.print("DDD: ");
